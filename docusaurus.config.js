@@ -1,103 +1,85 @@
 module.exports = {
-  title: 'My Site',
-  tagline: 'The tagline of my site',
-  url: 'https://your-docusaurus-test-site.com',
-  baseUrl: '/',
-  favicon: 'img/favicon.ico',
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  title: "Nyax",
+  tagline: "一个 Redux 框架",
+  url: "https://nyax.js.org",
+  baseUrl: "/",
+  favicon: "img/favicon.ico",
+  organizationName: "SpringNyan", // Usually your GitHub org/user name.
+  projectName: "nyax", // Usually your repo name.
   themeConfig: {
     navbar: {
-      title: 'My Site',
+      title: "Nyax",
       logo: {
-        alt: 'My Site Logo',
-        src: 'img/logo.svg',
+        alt: "Nyax Logo",
+        src: "img/logo.svg",
       },
       links: [
         {
-          to: 'docs/',
-          activeBasePath: 'docs',
-          label: 'Docs',
-          position: 'left',
+          label: "快速开始",
+          to: "introduction/getting-started",
+          position: "right",
         },
-        {to: 'blog', label: 'Blog', position: 'left'},
         {
-          href: 'https://github.com/facebook/docusaurus',
-          label: 'GitHub',
-          position: 'right',
+          label: "基本概念",
+          to: "concepts/basic-concepts",
+          position: "right",
+        },
+        {
+          label: "API",
+          to: "api/api-reference",
+          position: "right",
+        },
+        {
+          label: "GitHub",
+          href: "https://github.com/SpringNyan/nyax",
+          position: "right",
         },
       ],
     },
     footer: {
-      style: 'dark',
+      style: "dark",
       links: [
         {
-          title: 'Docs',
+          title: "文档",
           items: [
             {
-              label: 'Style Guide',
-              to: 'docs/',
+              label: "快速开始",
+              to: "introduction/getting-started",
             },
             {
-              label: 'Second Doc',
-              to: 'docs/doc2/',
+              label: "基本概念",
+              to: "concepts/basic-concepts",
+            },
+            {
+              label: "API 参考",
+              to: "api/api-reference",
             },
           ],
         },
         {
-          title: 'Community',
+          title: "其它",
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            },
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
-            },
-          ],
-        },
-        {
-          title: 'More',
-          items: [
-            {
-              label: 'Blog',
-              to: 'blog',
-            },
-            {
-              label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              label: "GitHub",
+              href: "https://github.com/SpringNyan/nyax",
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} SpringNyan. Built with Docusaurus.`,
     },
   },
   presets: [
     [
-      '@docusaurus/preset-classic',
+      "@docusaurus/preset-classic",
       {
         docs: {
-          // It is recommended to set document id as docs home page (`docs/` path).
-          homePageId: 'doc1',
-          sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/',
-        },
-        blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          editUrl:
-            'https://github.com/facebook/docusaurus/edit/master/website/blog/',
+          path: "docs",
+          routeBasePath: "/",
+          sidebarPath: require.resolve("./sidebars.js"),
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: require.resolve("./src/css/custom.css"),
         },
       },
     ],

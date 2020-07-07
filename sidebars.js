@@ -1,6 +1,12 @@
 module.exports = {
   someSidebar: {
-    Docusaurus: ['doc1', 'doc2', 'doc3'],
-    Features: ['mdx'],
+    介绍: ["introduction/getting-started", "introduction/installation"],
+    概念: [
+      "concepts/basic-concepts",
+      "concepts/model",
+      "concepts/container",
+      "concepts/default-args",
+    ],
+    API: ["api/api-reference"],
   },
 };
