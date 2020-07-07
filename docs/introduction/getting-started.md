@@ -3,14 +3,14 @@ id: getting-started
 title: 快速开始
 ---
 
-Nyax 是一个基于 Redux 的框架，旨在提供完备的 TypeScript 类型推断提示以及整合常用的 Redux 方案。
+Nyax 是一个基于 Redux 的框架，旨在提供完备的 TypeScript 类型推断提示以及应用的模块化，且整合了常用的 Redux 方案。
 
 ## 特性
 
-- 完备的 TypeScript 类型推断提示，拒绝 AnyScript
+- 完备的 TypeScript 类型推断提示，拒绝 "AnyScript"
 - 整合常用的 Redux 方案，满足绝大部分业务需求
 - 应用模块化，多个 Model 之间可交互
-- 支持 Container 的动态注册卸载，可以在运行时动态注册相同 Model 的多个 Container
+- 支持 Container 的动态注册卸载，可以在运行时动态注册相同 Model 的多个独立的 Container
 - 基于原生 Redux，可以自由进行额外定制
 
 ## 安装

@@ -9,7 +9,7 @@ import styles from "./styles.module.css";
 const features = [
   {
     title: <>完备的 TypeScript 支持</>,
-    description: <>支持完备的 TypeScript 类型推导和提示，拒绝 AnyScript。</>,
+    description: <>支持完备的 TypeScript 类型推导和提示，拒绝 "AnyScript"。</>,
   },
   {
     title: <>应用模块化</>,
