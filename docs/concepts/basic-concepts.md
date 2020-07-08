@@ -9,12 +9,6 @@ title: 基本概念
 
 :::
 
-:::note
-
-我们默认你已拥有 [Redux Thunk](https://github.com/reduxjs/redux-thunk)，[Redux Observable](https://github.com/redux-observable/redux-observable) 和 [Reselect](https://github.com/reduxjs/reselect) 的相关知识。
-
-:::
-
 Nyax 主要有两个概念：Model（模块）和 Container（容器）。
 
 Model 和 Container 的关系类似于 Class 和 Instance。一个 Model 可能对应一个或多个 Container。Model 对应的 Container 可以被动态注册和卸载。

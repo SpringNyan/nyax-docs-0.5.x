@@ -43,7 +43,7 @@ const Model = createModel(
 );
 
 const container = getContainer(Model);
-container.state.foo; // foo
+container.state.foo; // "foo"
 ```
 
 ## Getters
@@ -64,7 +64,7 @@ const Model = createModel(
 );
 
 const container = getContainer(Model);
-container.getters.fooText; // foo: foo
+container.getters.fooText; // "foo: foo"
 ```
 
 ## Actions
@@ -75,7 +75,7 @@ container.getters.fooText; // foo: foo
 
 :::info
 
-默认情况下分发 action 时对应的 reducer 会被同步执行，因此在不需要 effect 返回值的情况下可以不等待 `Promise` 结束。
+默认情况下分发 action 时对应的 reducer 会被同步执行，因此在不需要 effect 返回值的情况下可以不等待 Promise 结束。
 
 :::
 
@@ -117,14 +117,14 @@ container.actions.setFoo.is(setFooAction); // true
 container.actions.trimFoo.is(setFooAction); // false
 
 container.actions.setFoo.dispatch("  foo  "); // Promise<void>
-await container.actions.trimFoo.dispatch({}); // foo
+await container.actions.trimFoo.dispatch({}); // "foo"
 ```
 
 ## 注册 Container
 
 通过调用 `register` 方法可以注册当前 Container。`register` 方法接受一个可选参数，该参数会和 Model 中的 defaultArgs 进行合并然后传递给 initialState。
 
-当 Container 注册后，通过 `getContainer` 获得的 Container 的引用在注册期间不会改变。
+注册 Container 会挂载 state 到 store 上，订阅 action 并执行对应的 reducer 和 effect，以及监听 epics。当 Container 注册后，通过 `getContainer` 获得的 Container 的引用在注册期间不会改变。
 
 :::info
 
@@ -139,13 +139,15 @@ container.register({ foo: "foo" });
 
 ## 卸载 Container
 
-通过调用 `unregister` 方法可以卸载当前 Container。该方法会从 store 中删除对应 state，终止 epics 监听并清理 Container 的缓存。
+通过调用 `unregister` 方法可以卸载当前 Container。
+
+卸载 Container 会从 store 中删除对应 state，停止订阅 action，并终止 epics 监听。Container 和对应 getters 的缓存也会被清理。
 
 无论 Container 是否注册均可调用该方法以清理缓存。
 
 :::info
 
-卸载 Container 并不会中断 effect 的执行。当 Model 为 Lazy Model 时需要小心非期望的重新注册。
+卸载 Container 并不会中断 effect 的执行。当 Model 为 Lazy Model 时需要小心非期望的自动注册。
 
 :::
 
@@ -163,7 +165,7 @@ Container 提供 `isRegistered` 和 `canRegister` 属性用来判断注册状态
 
 :::info
 
-`ContainerCore` 是只包含 state，getters 和 actions 的 Container。Sub Container 实际上并不是一个真正的 Container，因为它没有注册在应用上的对应 Model 。
+`ContainerCore` 是只包含 state，getters 和 actions 的 Container。Sub Container 实际上并不是一个真正的 Container，因为它没有对应的 Model 注册在应用上。
 
 :::
 
@@ -197,6 +199,6 @@ const Model = mergeSubModels({
 
 const container = getContainer(Model);
 const aContainer = createSubContainer(container, "a");
-aContainer.state.name; // A
-aContainer.state.x; // X
+aContainer.state.name; // "A"
+aContainer.state.x; // "X"
 ```

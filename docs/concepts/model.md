@@ -113,8 +113,8 @@ const BModel = createModel(
 
 const Model = mergeModels(AModel, BModel);
 const container = getContainer(Model);
-container.state.a; // A
-container.state.b; // B
+container.state.a; // "A"
+container.state.b; // "B"
 ```
 
 ## 合并 Sub Model
@@ -149,10 +149,10 @@ const Model = mergeSubModels({
   b: BModel,
 });
 const container = getContainer(Model);
-container.state.a.name; // A
-container.state.b.name; // B
-container.state.a.x; // X
-container.state.b.y; // Y
+container.state.a.name; // "A"
+container.state.b.name; // "B"
+container.state.a.x; // "X"
+container.state.b.y; // "Y"
 ```
 
 ## 重写 Model 定义
