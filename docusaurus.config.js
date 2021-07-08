@@ -1,8 +1,8 @@
 module.exports = {
   title: "Nyax",
   tagline: "一个 Redux 框架",
-  url: "https://nyax.js.org",
-  baseUrl: "/",
+  url: "https://springnyan.github.io",
+  baseUrl: "/nyax-docs-0.5.x/",
   favicon: "img/favicon.ico",
   organizationName: "SpringNyan", // Usually your GitHub org/user name.
   projectName: "nyax", // Usually your repo name.
@@ -16,17 +16,17 @@ module.exports = {
       links: [
         {
           label: "快速开始",
-          to: "introduction/getting-started",
+          to: "docs/introduction/getting-started",
           position: "right",
         },
         {
           label: "基本概念",
-          to: "concepts/basic-concepts",
+          to: "docs/concepts/basic-concepts",
           position: "right",
         },
         {
           label: "API",
-          to: "api/api-reference",
+          to: "docs/api/api-reference",
           position: "right",
         },
         {
@@ -44,15 +44,15 @@ module.exports = {
           items: [
             {
               label: "快速开始",
-              to: "introduction/getting-started",
+              to: "docs/introduction/getting-started",
             },
             {
               label: "基本概念",
-              to: "concepts/basic-concepts",
+              to: "docs/concepts/basic-concepts",
             },
             {
               label: "API 参考",
-              to: "api/api-reference",
+              to: "docs/api/api-reference",
             },
           ],
         },
@@ -75,7 +75,7 @@ module.exports = {
       {
         docs: {
           path: "docs",
-          routeBasePath: "/",
+          routeBasePath: "docs",
           sidebarPath: require.resolve("./sidebars.js"),
         },
         theme: {
