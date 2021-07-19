@@ -41,6 +41,10 @@ function Home() {
   const { siteConfig = {} } = context;
   return (
     <Layout title="Nyax - 一个 Redux 框架" description="一个 Redux 框架">
+      <div className="admonition admonition-warning alert alert--warning">
+        这是 Nyax 0.5.x 版本的文档。<a href="https://nyax.js.org">点击这里</a>
+        浏览最新版本的文档。
+      </div>
       <header className={clsx("hero hero--primary", styles.heroBanner)}>
         <div className="container">
           <h1 className="hero__title">{siteConfig.title}</h1>
